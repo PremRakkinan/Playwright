@@ -1,0 +1,64 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: test
+- Location: C:\PlayWright Automation\tests\SmartMeter\POM.spec.js:4:5
+
+# Error details
+
+```
+Error: locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for locator('role=button[name="Log In"]')
+
+    at C:\PlayWright Automation\tests\SmartMeter\POM.spec.js:7:52
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 | import { Login } from '../Projects Logins/Smartmeter';
+   3 | //import { login } from '../Projects Logins/Ajensia';
+   4 | test('test', async ({ page }) => {
+   5 |   await Login(page);
+   6 |   await page.waitForTimeout(5000);
+>  7 |   await page.locator('role=button[name="Log In"]').click();
+     |                                                    ^ Error: locator.click: Target page, context or browser has been closed
+   8 |
+   9 |   //await page.getByRole('button', { name: 'Log In' }).click();
+  10 |   await page.waitForTimeout(5000);
+  11 |   await page.locator('role=link[name="Customer"]').click();
+  12 |
+  13 |   // page.getByRole('link', { name: 'Customer', exact: true }).click();
+  14 |   await page.getByRole('link', { name: '+ Create' }).click();
+  15 |   await page.locator('#customer_group').selectOption('Individual');
+  16 |   await page.getByRole('textbox', { name: 'First Name:' }).click();
+  17 |   await page.getByRole('textbox', { name: 'First Name:' }).fill('Prithvi');
+  18 |   await page.getByRole('textbox', { name: 'Second Name:' }).click();
+  19 |   await page.getByRole('textbox', { name: 'Second Name:' }).fill('Raj');
+  20 |   await page.getByRole('textbox', { name: 'Third Name:' }).click();
+  21 |   await page.getByRole('textbox', { name: 'Third Name:' }).fill('p');
+  22 |   await page.getByRole('textbox', { name: 'Fourth Name:' }).click();
+  23 |   await page.getByRole('textbox', { name: 'Fourth Name:' }).fill('r');
+  24 |   await page.getByRole('radio', { name: 'Male', exact: true }).check();
+  25 |   await page.getByRole('textbox', { name: 'Owner Phone Number:' }).click();
+  26 |   await page.getByRole('textbox', { name: 'Owner Phone Number:' }).fill('74375545');
+  27 |   await page.getByRole('textbox', { name: 'Email ID:' }).click();
+  28 |   await page.getByRole('textbox', { name: 'Email ID:' }).fill('raj@gmail.com');
+  29 |   await page.getByRole('textbox', { name: 'Tenant Phone Number:' }).click();
+  30 |   await page.getByRole('textbox', { name: 'Tenant Phone Number:' }).fill('643653474');
+  31 |   await page.getByRole('textbox', { name: 'Address Line 1:' }).click();
+  32 |   await page.getByRole('textbox', { name: 'Address Line 1:' }).fill('Add One');
+  33 |   await page.getByRole('textbox', { name: 'Address Line 2:' }).click();
+  34 |   await page.getByRole('textbox', { name: 'Address Line 2:' }).fill('Add Two');
+  35 |   await page.getByRole('button', { name: 'Save' }).click();
+  36 |
+  37 |   
+  38 | });
+```

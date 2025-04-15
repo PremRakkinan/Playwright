@@ -1,0 +1,278 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: test
+- Location: C:\PlayWright Automation\tests\SmartMeter\CustomerCreation.spec.js:3:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('role=button[name="Log In"]')
+
+    at C:\PlayWright Automation\tests\SmartMeter\CustomerCreation.spec.js:12:52
+```
+
+# Page snapshot
+
+```yaml
+- banner:
+  - link "logo":
+    - img "logo"
+  - navigation:
+    - button
+    - list:
+      - listitem:
+        - link "KPI Dashboards":
+          - img
+          - text: KPI Dashboards
+    - list:
+      - listitem:
+        - link
+      - listitem:
+        - link "img Admin Carifer":
+          - img "img"
+          - paragraph: Admin Carifer
+- complementary:
+  - list:
+    - listitem:
+      - link "Dashboard":
+        - img
+        - text: Dashboard
+    - listitem:
+      - link "Customer":
+        - img
+        - text: Customer
+    - listitem:
+      - link "Meter":
+        - img
+        - text: Meter
+    - listitem:
+      - link "Prepaid Meters**":
+        - img
+        - text: Prepaid Meters**
+    - listitem:
+      - link "Transferred Meters":
+        - img
+        - text: Transferred Meters
+    - listitem:
+      - link "Meter Map":
+        - img
+        - text: Meter Map
+    - listitem:
+      - link "Meter Monitor":
+        - img
+        - text: Meter Monitor
+    - listitem:
+      - link "Meter Operations":
+        - img
+        - text: Meter Operations
+    - listitem:
+      - link "Workflow ":
+        - img
+        - text: Workflow 
+    - listitem:
+      - link "Meter Events":
+        - img
+        - text: Meter Events
+    - listitem:
+      - link "Meter Conversion":
+        - img
+        - text: Meter Conversion
+    - listitem:
+      - link "Survey App ":
+        - img
+        - text: Survey App 
+    - listitem:
+      - link "Sales Invoice":
+        - img
+        - text: Sales Invoice
+    - listitem:
+      - link "Map Invoice":
+        - img
+        - text: Map Invoice
+    - listitem:
+      - link "Payments":
+        - img
+        - text: Payments
+    - listitem:
+      - link "Make Payment":
+        - img
+        - text: Make Payment
+    - listitem:
+      - link "SMS ":
+        - img
+        - text: SMS 
+    - listitem:
+      - link "Petty Cash ":
+        - img
+        - text: Petty Cash 
+    - listitem:
+      - link "Meter Area Bulk Transfer":
+        - img
+        - text: Meter Area Bulk Transfer
+    - listitem:
+      - link "Meter Area Change":
+        - img
+        - text: Meter Area Change
+    - listitem:
+      - link "Change Meter Area in Bulk":
+        - img
+        - text: Change Meter Area in Bulk
+    - listitem:
+      - link "Smartmeter Sales Invoice Batch":
+        - img
+        - text: Smartmeter Sales Invoice Batch
+    - listitem:
+      - link "Reports ":
+        - img
+        - text: Reports 
+    - listitem:
+      - link "Customer Care ":
+        - img
+        - text: Customer Care 
+    - listitem:
+      - link "Security ":
+        - img
+        - text: Security 
+    - listitem:
+      - link "Settings ":
+        - img
+        - text: Settings 
+    - listitem:
+      - link "Accounts ":
+        - img
+        - text: Accounts 
+    - listitem:
+      - link "Shareholder ":
+        - img
+        - text: Shareholder 
+    - listitem:
+      - link "HR ":
+        - img
+        - text: HR 
+    - listitem:
+      - link "Supplier ":
+        - img
+        - text: Supplier 
+    - listitem:
+      - link "Purchase ":
+        - img
+        - text: Purchase 
+    - listitem:
+      - link "Inventory ":
+        - img
+        - text: Inventory 
+    - listitem:
+      - link "Add Income":
+        - img
+        - text: Add Income
+    - listitem:
+      - link "Add Expense":
+        - img
+        - text: Add Expense
+    - listitem:
+      - link "Income And Expense Report":
+        - img
+        - text: Income And Expense Report
+    - listitem:
+      - link "Manager Dashboard":
+        - img
+        - text: Manager Dashboard
+    - listitem:
+      - link "Manager":
+        - img
+        - text: Manager
+    - listitem:
+      - link "Live Meter ":
+        - img
+        - text: Live Meter 
+- complementary:
+  - heading "Welcome to Smartmeter" [level=1]
+  - list:
+    - listitem:
+      - link "Dashboard":
+        - img
+        - text: Dashboard
+  - link "Total Customers"
+  - text: 13,805
+  - img
+  - text: Total Meters 13,918
+  - img
+  - text: Connected Meters 12,430
+  - img
+  - link "Disconnected Meters"
+  - text: 1,487
+  - img
+  - heading "Billed" [level=4]
+  - text: 0.01%
+  - heading "1" [level=3]
+  - paragraph: This Month
+  - heading "21" [level=3]
+  - paragraph: Last Month
+  - heading "Payments" [level=4]
+  - text: 0.01%
+  - heading "2" [level=3]
+  - paragraph: This Month
+  - heading "21" [level=3]
+  - paragraph: Last Month
+  - heading "Month Wise Meter Reading" [level=4]:
+    - img
+    - text: Month Wise Meter Reading
+  - img: 0 50,000 100,000 150,000 200,000 August September October November December January February March April October November December
+- tooltip "Return to top"
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 |
+   3 | test('test', async ({ page }) => {
+   4 |   await page.goto('https://v1prepaid.smhrp01.app/admin/signin');
+   5 |   await page.getByRole('textbox', { name: 'Email E-mail Confirm E-mail' }).click();
+   6 |   await page.getByRole('textbox', { name: 'Email E-mail Confirm E-mail' }).fill('admin@carifer.com');
+   7 |   await page.getByRole('textbox', { name: 'Password Password' }).click();
+   8 |   await page.getByRole('textbox', { name: 'Password Password' }).fill('Password@123');
+   9 |   await page.getByRole('textbox', { name: 'Password Password' }).press('Enter');
+  10 |
+  11 |   await page.waitForTimeout(5000);
+> 12 |   await page.locator('role=button[name="Log In"]').click();
+     |                                                    ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  13 |
+  14 |   //await page.getByRole('button', { name: 'Log In' }).click();
+  15 |   await page.waitForTimeout(5000);
+  16 |   await page.locator('role=link[name="Customer"]').click();
+  17 |
+  18 |   // page.getByRole('link', { name: 'Customer', exact: true }).click();
+  19 |   await page.getByRole('link', { name: '+ Create' }).click();
+  20 |   await page.locator('#customer_group').selectOption('Individual');
+  21 |   await page.getByRole('textbox', { name: 'First Name:' }).click();
+  22 |   await page.getByRole('textbox', { name: 'First Name:' }).fill('Prithvi');
+  23 |   await page.getByRole('textbox', { name: 'Second Name:' }).click();
+  24 |   await page.getByRole('textbox', { name: 'Second Name:' }).fill('Raj');
+  25 |   await page.getByRole('textbox', { name: 'Third Name:' }).click();
+  26 |   await page.getByRole('textbox', { name: 'Third Name:' }).fill('p');
+  27 |   await page.getByRole('textbox', { name: 'Fourth Name:' }).click();
+  28 |   await page.getByRole('textbox', { name: 'Fourth Name:' }).fill('r');
+  29 |   await page.getByRole('radio', { name: 'Male', exact: true }).check();
+  30 |   await page.getByRole('textbox', { name: 'Owner Phone Number:' }).click();
+  31 |   await page.getByRole('textbox', { name: 'Owner Phone Number:' }).fill('74375545');
+  32 |   await page.getByRole('textbox', { name: 'Email ID:' }).click();
+  33 |   await page.getByRole('textbox', { name: 'Email ID:' }).fill('raj@gmail.com');
+  34 |   await page.getByRole('textbox', { name: 'Tenant Phone Number:' }).click();
+  35 |   await page.getByRole('textbox', { name: 'Tenant Phone Number:' }).fill('643653474');
+  36 |   await page.getByRole('textbox', { name: 'Address Line 1:' }).click();
+  37 |   await page.getByRole('textbox', { name: 'Address Line 1:' }).fill('Add One');
+  38 |   await page.getByRole('textbox', { name: 'Address Line 2:' }).click();
+  39 |   await page.getByRole('textbox', { name: 'Address Line 2:' }).fill('Add Two');
+  40 |   await page.getByRole('button', { name: 'Save' }).click();
+  41 |
+  42 | });
+```

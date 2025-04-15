@@ -1,0 +1,113 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Login test for user: admin@carifer.com
+- Location: C:\PlayWright Automation\tests\DD Framework\Datadriven.spec.js:10:7
+
+# Error details
+
+```
+Error: locator.click: Error: strict mode violation: getByRole('textbox') resolved to 9 elements:
+    1) <input value="" id="email" type="text" name="email" data-bv-field="email" placeholder="User Name"/> aka getByRole('textbox', { name: 'Email E-mail Confirm E-mail' })
+    2) <input id="password" name="password" type="password" data-bv-field="password" placeholder="Enter a password"/> aka getByRole('textbox', { name: 'Password Password' })
+    3) <input value="" required="" type="text" id="first_name" name="first_name" placeholder="John" data-bv-field="first_name"/> aka getByRole('textbox', { name: 'First Name' })
+    4) <input value="" required="" type="text" id="last_name" name="last_name" placeholder="Doe" data-bv-field="last_name"/> aka getByRole('textbox', { name: 'Last Name' })
+    5) <input value="" id="email" required="" name="email" type="email" data-bv-field="email" placeholder="mysupermail@mail.com"/> aka locator('#register_here #email')
+    6) <input value="" required="" type="email" id="email_confirm" name="email_confirm" data-bv-field="email_confirm" placeholder="mysupermail@mail.com"/> aka locator('#email_confirm')
+    7) <input required="" id="password" name="password" type="password" placeholder="Password" data-bv-field="password"/> aka getByRole('textbox', { name: 'Password', exact: true })
+    8) <input required="" type="password" id="password_confirm" name="password_confirm" placeholder="Confirm Password" data-bv-field="password_confirm"/> aka getByRole('textbox', { name: 'Confirm Password' })
+    9) <input value="" id="email" required="" name="email" type="email" data-bv-field="email" placeholder="your@mail.com"/> aka getByRole('textbox', { name: 'your@mail.com' })
+
+Call log:
+  - waiting for getByRole('textbox')
+
+    at C:\PlayWright Automation\tests\DD Framework\Datadriven.spec.js:14:54
+```
+
+# Page snapshot
+
+```yaml
+- form:
+  - heading "Nuwaco logo" [level=3]:
+    - img "Nuwaco logo"
+  - img
+  - text: Email
+  - textbox "Email E-mail Confirm E-mail"
+  - img
+  - text: Password
+  - textbox "Password Password"
+  - paragraph:
+    - button "Log In"
+- form:
+  - heading "josh logo Sign Up" [level=3]:
+    - img "josh logo"
+    - text: Sign Up
+  - img
+  - text: First Name
+  - textbox "First Name"
+  - img
+  - text: Last Name
+  - textbox "Last Name"
+  - img
+  - text: E-mail
+  - textbox "mysupermail@mail.com"
+  - img
+  - text: Confirm E-mail
+  - textbox "mysupermail@mail.com"
+  - img
+  - text: Password
+  - textbox "Password"
+  - img
+  - text: Confirm Password
+  - textbox "Confirm Password"
+  - paragraph:
+    - button "Sign Up"
+  - paragraph:
+    - link "Back":
+      - button "Back"
+- form:
+  - heading "josh logo Forgot Password" [level=3]:
+    - img "josh logo"
+    - text: Forgot Password
+  - paragraph: Enter your email address below and we'll send a special reset password link to your inbox.
+  - img
+  - text: Your email
+  - textbox "your@mail.com"
+  - paragraph:
+    - button "Reset Password"
+  - paragraph:
+    - link "Back":
+      - button "Back"
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 | import { readExcel } from './ReadExcel'; 
+   3 |  
+   4 | const testData = readExcel();  // Read test data from the Excel file
+   5 |  
+   6 | console.log(testData);  // Add this line to log the data
+   7 |  
+   8 | // Loop over each row in the test data
+   9 | testData.forEach((data) => {
+  10 |   test(`Login test for user: ${data.Username}`, async ({ page }) => {
+  11 |     console.log(`Running test for user: ${data.Username}`);  // Log the username for each test
+  12 |  
+  13 |     await page.goto('https://v1prepaid.smhrp01.app/admin/signin');
+> 14 |     await page.getByRole('textbox', { id: 'email' }).click();
+     |                                                      ^ Error: locator.click: Error: strict mode violation: getByRole('textbox') resolved to 9 elements:
+  15 |     await page.getByRole('textbox', { id: 'email' }).fill(data.Username);
+  16 |     await page.getByRole('textbox', { id: 'password' }).click();
+  17 |     await page.getByRole('textbox', { id: 'password' }).fill(data.Password);
+  18 |     await page.getByRole('textbox', { type: 'submit' }).click();
+  19 |   });
+  20 | });
+  21 |  
+```
