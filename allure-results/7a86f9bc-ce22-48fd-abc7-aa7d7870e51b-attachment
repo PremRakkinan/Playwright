@@ -1,0 +1,68 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: login API should return a token
+- Location: C:\PlayWright Automation\tests\API\SmartLoginAPI.spec.js:3:5
+
+# Error details
+
+```
+Error: apiRequestContext.post: certificate has expired
+Call log:
+  - → POST https://liam.siinpay.com/auth/realms/siinpay/protocol/openid-connect/token
+    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.35 Safari/537.36
+    - accept: */*
+    - accept-encoding: gzip,deflate,br
+    - Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJWQzdrTFQzaVhyRjVzczdYTW5CcjVrQ1E0LW5pY1NmUFpLTmJYRFVMRFVVIn0.eyJqdGkiOiI2ZmQyYjkyMy1hNDRlLTRlNDQtYmMzNS0zZDUxZTVhZTIyODAiLCJleHAiOjE3NDQ5NDcyMDEsIm5iZiI6MCwiaWF0IjoxNzQ0ODYwODAxLCJpc3MiOiJodHRwczovL2xpYW0uc2lpbnBheS5jb20vYXV0aC9yZWFsbXMvc2lpbnBheSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI4NTZhMWZhYi0xMjVhLTRjNWEtOTAxZi0xYTQ0NmZlNWY4MDYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJzaWlucGF5LWFwaSIsImF1dGhfdGltZSI6MCwic2Vzc2lvbl9zdGF0ZSI6IjQ2ZTQ1NjUwLWJkNDQtNGMyOS1hMjRhLTA2MjE0MjY1NzIxNSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiUk9MRV9FTUFBTF9GSU5BTkNJQUxfSU5TVElUVVRJT04iLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJTb21CYW5rIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic29tYmFuayIsImxvY2FsZSI6ImVuIiwiZ2l2ZW5fbmFtZSI6IlNvbUJhbmsiLCJmYW1pbHlfbmFtZSI6IiJ9.Tdxl-eG2ld8YnVEuyIcYhwnqZ7GGZ3yCtxPBXGNfeS8W_HCfT-WF1hDJr20YR57xJYLN-JGbUShkrBWdX_PDylJ6WkgiAlJZwjhjOHxP3Kh5e0a1zPyt5GDVUqu9j2Nq7aBe4LkO2gmAUdNl-wrE9VzLCy4PipTayf1NvfhRBgmguPXcooodULVgfU00pe6KRqsnhxHVPTs-0SmhbXfbzElB6cMzbsBXgl54IfpHQfUHsM1kJwmhVMB4gMsqfU2-YHi0aZfL0tdnhk9WdX99dWxsE8BjZ0DFu4aCWKgLpg32so8dGzAVLwp5-HKxdOef2L6q6yF5uva9VPl4Tr6kVw
+    - Content-Type: application/json
+    - content-length: 156
+
+    at C:\PlayWright Automation\tests\API\SmartLoginAPI.spec.js:24:37
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect, request } from '@playwright/test';
+   2 |  
+   3 | test('login API should return a token', async () => {
+   4 |     const token = 'eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJWQzdrTFQzaVhyRjVzczdYTW5CcjVrQ1E0LW5pY1NmUFpLTmJYRFVMRFVVIn0.eyJqdGkiOiI2ZmQyYjkyMy1hNDRlLTRlNDQtYmMzNS0zZDUxZTVhZTIyODAiLCJleHAiOjE3NDQ5NDcyMDEsIm5iZiI6MCwiaWF0IjoxNzQ0ODYwODAxLCJpc3MiOiJodHRwczovL2xpYW0uc2lpbnBheS5jb20vYXV0aC9yZWFsbXMvc2lpbnBheSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI4NTZhMWZhYi0xMjVhLTRjNWEtOTAxZi0xYTQ0NmZlNWY4MDYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJzaWlucGF5LWFwaSIsImF1dGhfdGltZSI6MCwic2Vzc2lvbl9zdGF0ZSI6IjQ2ZTQ1NjUwLWJkNDQtNGMyOS1hMjRhLTA2MjE0MjY1NzIxNSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiUk9MRV9FTUFBTF9GSU5BTkNJQUxfSU5TVElUVVRJT04iLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJTb21CYW5rIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic29tYmFuayIsImxvY2FsZSI6ImVuIiwiZ2l2ZW5fbmFtZSI6IlNvbUJhbmsiLCJmYW1pbHlfbmFtZSI6IiJ9.Tdxl-eG2ld8YnVEuyIcYhwnqZ7GGZ3yCtxPBXGNfeS8W_HCfT-WF1hDJr20YR57xJYLN-JGbUShkrBWdX_PDylJ6WkgiAlJZwjhjOHxP3Kh5e0a1zPyt5GDVUqu9j2Nq7aBe4LkO2gmAUdNl-wrE9VzLCy4PipTayf1NvfhRBgmguPXcooodULVgfU00pe6KRqsnhxHVPTs-0SmhbXfbzElB6cMzbsBXgl54IfpHQfUHsM1kJwmhVMB4gMsqfU2-YHi0aZfL0tdnhk9WdX99dWxsE8BjZ0DFu4aCWKgLpg32so8dGzAVLwp5-HKxdOef2L6q6yF5uva9VPl4Tr6kVw'; // Replace with actual token
+   5 |  
+   6 |     // Step 1: Create API context with Authorization header
+   7 |     const apiContext = await request.newContext({
+   8 |       extraHTTPHeaders: {
+   9 |         Authorization: `Bearer ${token}`,
+  10 |         'Content-Type': 'application/json'
+  11 |       }
+  12 |
+  13 |     });
+  14 |   // Step 2: Define the login payload (credentials)
+  15 |   const registrationPayload = {
+  16 |     client_id: 'siinpay-api',
+  17 |     grant_type:'password',
+  18 |     username:'sombank',
+  19 |     password:'TrFEMnt8YCk3uqe',
+  20 |     client_secret:'6a3a83be-2584-4075-8955-06d692f9f872'
+  21 |  
+  22 |   };
+  23 |    // Step 3: Make a POST request to the login endpoint with the payload
+> 24 |   const response = await apiContext.post(        //changed as requestContext from apiContext
+     |                                     ^ Error: apiRequestContext.post: certificate has expired
+  25 |     'https://liam.siinpay.com/auth/realms/siinpay/protocol/openid-connect/token', {
+  26 |     data: registrationPayload
+  27 |   });
+  28 |  
+  29 |   // Step 4: Check the response
+  30 |  
+  31 |  const status = response.status();
+  32 |  const body = await response.text(); // use text() for raw debugging
+  33 |  console.log('Status Code:', status);
+  34 |  console.log('Response Body:', body);
+  35 |  
+  36 | });
+```
