@@ -11,7 +11,7 @@ test('test', async ({ page }) => {
   await page.locator('role=link[name="Customer"]').click();
 
 
-  
+
   // page.getByRole('link', { name: 'Customer', exact: true }).click();
   await page.getByRole('link', { name: '+ Create' }).click();
   await page.locator('#customer_group').selectOption('Individual');
@@ -19,7 +19,7 @@ test('test', async ({ page }) => {
   await page.getByRole('textbox', { name: 'First Name:' }).fill('Prithvi');
   await page.getByRole('textbox', { name: 'Second Name:' }).click();
   await page.getByRole('textbox', { name: 'Second Name:' }).fill('Raj');
-  await page.getByRole('textbox'................................................, { name: 'Third Name:' }).click();
+  await page.getByRole('textbox', { name: 'Third Name:' }).click();
   await page.getByRole('textbox', { name: 'Third Name:' }).fill('p');
   await page.getByRole('textbox', { name: 'Fourth Name:' }).click();
   await page.getByRole('textbox', { name: 'Fourth Name:' }).fill('r');

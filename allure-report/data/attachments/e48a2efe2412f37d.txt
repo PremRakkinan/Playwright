@@ -1,0 +1,45 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: test
+- Location: C:\PlayWright Automation\tests\Demo\handlebrowser.spec.js:5:5
+
+# Error details
+
+```
+Error: browserContext._wrapApiCall: Test ended.
+Browser logs:
+
+<launching> C:\Users\chand\AppData\Local\ms-playwright\chromium-1161\chrome-win\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AutoExpandDetailsElement,AvoidUnnecessaryBeforeUnloadCheckSync,CertificateTransparencyComponentUpdater,DeferRendererTasksAfterInput,DestroyProfileOnBrowserClose,DialMediaRouteProvider,ExtensionManifestV2Disabled,GlobalMediaControls,HttpsUpgrades,ImprovedCookieControls,LazyFrameLoading,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --enable-automation --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --no-sandbox --user-data-dir=C:\Users\chand\AppData\Local\Temp\playwright_chromiumdev_profile-yJVkjc --remote-debugging-pipe --no-startup-window
+<launched> pid=5736
+[pid=5736][err] [5736:2516:0410/125014.270:ERROR:service_client.cc(36)] Unexpected on_device_model service disconnect: The device's GPU is not supported.
+[pid=5736] <gracefully close start>
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 |
+   3 |
+   4 |
+>  5 | test('test', async ({ page }) => {
+     |     ^ Error: browserContext._wrapApiCall: Test ended.
+   6 |   //await chromium.launch({ headless: false }); // For debugging
+   7 |
+   8 |   await page.goto('https://v1prepaid.smhrp01.app/admin/signin');
+   9 |   await page.pause();
+  10 |   await page.getByRole('textbox', { name: 'Email E-mail Confirm E-mail' }).click();
+  11 |   await page.getByRole('textbox', { name: 'Email E-mail Confirm E-mail' }).fill('admin@carifer.com');
+  12 |   await page.getByRole('textbox', { name: 'Password Password' }).click();
+  13 |   await page.getByRole('textbox', { name: 'Password Password' }).fill('Password@123');
+  14 |   await page.getByRole('button', { name: 'Log In' }).click();
+  15 |   await page.pause();
+  16 |
+  17 | });
+```

@@ -1,0 +1,457 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: test
+- Location: C:\PlayWright Automation\tests\SmartMeter\MakePayment.spec.js:3:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByRole('row', { name: 'NU-INV-559723 28-01-2024' }).getByRole('link').nth(2)
+
+    at C:\PlayWright Automation\tests\SmartMeter\MakePayment.spec.js:14:94
+```
+
+# Page snapshot
+
+```yaml
+- banner:
+  - link "logo":
+    - img "logo"
+  - navigation:
+    - button
+    - list:
+      - listitem:
+        - link "KPI Dashboards":
+          - img
+          - text: KPI Dashboards
+    - list:
+      - listitem:
+        - link
+      - listitem:
+        - link "img Admin Carifer":
+          - img "img"
+          - paragraph: Admin Carifer
+- complementary:
+  - list:
+    - listitem:
+      - link "Dashboard":
+        - img
+        - text: Dashboard
+    - listitem:
+      - link "Customer":
+        - img
+        - text: Customer
+    - listitem:
+      - link "Meter":
+        - img
+        - text: Meter
+    - listitem:
+      - link "Prepaid Meters**":
+        - img
+        - text: Prepaid Meters**
+    - listitem:
+      - link "Transferred Meters":
+        - img
+        - text: Transferred Meters
+    - listitem:
+      - link "Meter Map":
+        - img
+        - text: Meter Map
+    - listitem:
+      - link "Meter Monitor":
+        - img
+        - text: Meter Monitor
+    - listitem:
+      - link "Meter Operations":
+        - img
+        - text: Meter Operations
+    - listitem:
+      - link "Workflow ":
+        - img
+        - text: Workflow 
+    - listitem:
+      - link "Meter Events":
+        - img
+        - text: Meter Events
+    - listitem:
+      - link "Meter Conversion":
+        - img
+        - text: Meter Conversion
+    - listitem:
+      - link "Survey App ":
+        - img
+        - text: Survey App 
+    - listitem:
+      - link "Sales Invoice":
+        - img
+        - text: Sales Invoice
+    - listitem:
+      - link "Map Invoice":
+        - img
+        - text: Map Invoice
+    - listitem:
+      - link "Payments":
+        - img
+        - text: Payments
+    - listitem:
+      - link "Make Payment":
+        - img
+        - text: Make Payment
+    - listitem:
+      - link "SMS ":
+        - img
+        - text: SMS 
+    - listitem:
+      - link "Petty Cash ":
+        - img
+        - text: Petty Cash 
+    - listitem:
+      - link "Meter Area Bulk Transfer":
+        - img
+        - text: Meter Area Bulk Transfer
+    - listitem:
+      - link "Meter Area Change":
+        - img
+        - text: Meter Area Change
+    - listitem:
+      - link "Change Meter Area in Bulk":
+        - img
+        - text: Change Meter Area in Bulk
+    - listitem:
+      - link "Smartmeter Sales Invoice Batch":
+        - img
+        - text: Smartmeter Sales Invoice Batch
+    - listitem:
+      - link "Reports ":
+        - img
+        - text: Reports 
+    - listitem:
+      - link "Customer Care ":
+        - img
+        - text: Customer Care 
+    - listitem:
+      - link "Security ":
+        - img
+        - text: Security 
+    - listitem:
+      - link "Settings ":
+        - img
+        - text: Settings 
+    - listitem:
+      - link "Accounts ":
+        - img
+        - text: Accounts 
+    - listitem:
+      - link "Shareholder ":
+        - img
+        - text: Shareholder 
+    - listitem:
+      - link "HR ":
+        - img
+        - text: HR 
+    - listitem:
+      - link "Supplier ":
+        - img
+        - text: Supplier 
+    - listitem:
+      - link "Purchase ":
+        - img
+        - text: Purchase 
+    - listitem:
+      - link "Inventory ":
+        - img
+        - text: Inventory 
+    - listitem:
+      - link "Add Income":
+        - img
+        - text: Add Income
+    - listitem:
+      - link "Add Expense":
+        - img
+        - text: Add Expense
+    - listitem:
+      - link "Income And Expense Report":
+        - img
+        - text: Income And Expense Report
+    - listitem:
+      - link "Manager Dashboard":
+        - img
+        - text: Manager Dashboard
+    - listitem:
+      - link "Manager":
+        - img
+        - text: Manager
+    - listitem:
+      - link "Live Meter ":
+        - img
+        - text: Live Meter 
+- complementary:
+  - heading "Sales Invoice" [level=1]
+  - list:
+    - listitem:
+      - link "Dashboard":
+        - img
+        - text: Dashboard
+    - listitem:
+      - text: »
+      - link "Sales Invoices List"
+  - heading "Sales Invoices List" [level=4]:
+    - img
+    - text: Sales Invoices List
+  - link " Credit Note Issued Invoice"
+  - link "+ Create"
+  - text: "Zone:"
+  - combobox "Please Select One"
+  - text: "Area:"
+  - combobox "Please Select One"
+  - text: "Customer Name:"
+  - textbox "Customer Name:"
+  - text: "Supply ID:"
+  - textbox "Enter Supply Id"
+  - text: "Invoice No :"
+  - textbox "Invoice No :"
+  - text: "Meter Status:"
+  - combobox "Please Select One"
+  - text: "Invoice Status:"
+  - combobox "× Unpaid"
+  - button "Search"
+  - button "Reset"
+  - grid:
+    - rowgroup:
+      - 'row "Invoice No: activate to sort column ascending Date: activate to sort column ascending Customer Name: activate to sort column ascending Status: activate to sort column ascending Total Amount Paid Amount Outstanding Modified: activate to sort column ascending Created By: activate to sort column ascending Action: activate to sort column ascending"':
+        - 'gridcell "Invoice No: activate to sort column ascending"': Invoice No 
+        - 'gridcell "Date: activate to sort column ascending"': Date 
+        - 'gridcell "Customer Name: activate to sort column ascending"': Customer Name 
+        - 'gridcell "Status: activate to sort column ascending"': Status 
+        - gridcell "Total Amount"
+        - gridcell "Paid Amount"
+        - gridcell "Outstanding"
+        - 'gridcell "Modified: activate to sort column ascending"': Modified 
+        - 'gridcell "Created By: activate to sort column ascending"': Created By 
+        - 'gridcell "Action: activate to sort column ascending"': Action 
+    - rowgroup:
+      - row "NU-INV-559736 28-02-2024 Kevin Peterson K P Unpaid $5.20 $2.60 $2.60 1 week ago admin@carifer.com  | ":
+        - gridcell "NU-INV-559736":
+          - link "NU-INV-559736"
+        - gridcell "28-02-2024"
+        - gridcell "Kevin Peterson K P":
+          - link "Kevin Peterson K P"
+        - gridcell "Unpaid"
+        - gridcell "$5.20"
+        - gridcell "$2.60"
+        - gridcell "$2.60"
+        - gridcell "1 week ago"
+        - gridcell "admin@carifer.com"
+        - gridcell " | ":
+          - link ""
+          - text: "|"
+          - link ""
+      - row "NU-INV-559728 28-01-2024 Cismaan Maxamuud Siciid Maxamed Unpaid $8.34 $1.18 $7.16 2 weeks ago admin@carifer.com  | ":
+        - gridcell "NU-INV-559728":
+          - link "NU-INV-559728"
+        - gridcell "28-01-2024"
+        - gridcell "Cismaan Maxamuud Siciid Maxamed":
+          - link "Cismaan Maxamuud Siciid Maxamed"
+        - gridcell "Unpaid"
+        - gridcell "$8.34"
+        - gridcell "$1.18"
+        - gridcell "$7.16"
+        - gridcell "2 weeks ago"
+        - gridcell "admin@carifer.com"
+        - gridcell " | ":
+          - link ""
+          - text: "|"
+          - link ""
+      - row "NU-INV-559727 28-02-2024 CID SHANKAR C S Unpaid $3.90 $0.00 $3.90 2 weeks ago admin@carifer.com  | ":
+        - gridcell "NU-INV-559727":
+          - link "NU-INV-559727"
+        - gridcell "28-02-2024"
+        - gridcell "CID SHANKAR C S":
+          - link "CID SHANKAR C S"
+        - gridcell "Unpaid"
+        - gridcell "$3.90"
+        - gridcell "$0.00"
+        - gridcell "$3.90"
+        - gridcell "2 weeks ago"
+        - gridcell "admin@carifer.com"
+        - gridcell " | ":
+          - link ""
+          - text: "|"
+          - link ""
+      - row "NU-INV-559722 28-03-2025 CID SHANKAR C S Unpaid $6.50 $0.00 $6.50 3 weeks ago admin@carifer.com  | ":
+        - gridcell "NU-INV-559722":
+          - link "NU-INV-559722"
+        - gridcell "28-03-2025"
+        - gridcell "CID SHANKAR C S":
+          - link "CID SHANKAR C S"
+        - gridcell "Unpaid"
+        - gridcell "$6.50"
+        - gridcell "$0.00"
+        - gridcell "$6.50"
+        - gridcell "3 weeks ago"
+        - gridcell "admin@carifer.com"
+        - gridcell " | ":
+          - link ""
+          - text: "|"
+          - link ""
+      - row "NU-INV-559717 28-01-2024 Create One Test T Unpaid $52.00 $0.00 $52.00 1 month ago admin@carifer.com  | ":
+        - gridcell "NU-INV-559717":
+          - link "NU-INV-559717"
+        - gridcell "28-01-2024"
+        - gridcell "Create One Test T":
+          - link "Create One Test T"
+        - gridcell "Unpaid"
+        - gridcell "$52.00"
+        - gridcell "$0.00"
+        - gridcell "$52.00"
+        - gridcell "1 month ago"
+        - gridcell "admin@carifer.com"
+        - gridcell " | ":
+          - link ""
+          - text: "|"
+          - link ""
+      - row "NU-INV-559716 12-03-2025 Create Five Test T Unpaid $10.00 $0.00 $10.00 1 month ago admin@carifer.com  | ":
+        - gridcell "NU-INV-559716":
+          - link "NU-INV-559716"
+        - gridcell "12-03-2025"
+        - gridcell "Create Five Test T":
+          - link "Create Five Test T"
+        - gridcell "Unpaid"
+        - gridcell "$10.00"
+        - gridcell "$0.00"
+        - gridcell "$10.00"
+        - gridcell "1 month ago"
+        - gridcell "admin@carifer.com"
+        - gridcell " | ":
+          - link ""
+          - text: "|"
+          - link ""
+      - row "NU-INV-559715 12-03-2025 Create Four Test T Unpaid $10.00 $0.00 $10.00 1 month ago admin@carifer.com  | ":
+        - gridcell "NU-INV-559715":
+          - link "NU-INV-559715"
+        - gridcell "12-03-2025"
+        - gridcell "Create Four Test T":
+          - link "Create Four Test T"
+        - gridcell "Unpaid"
+        - gridcell "$10.00"
+        - gridcell "$0.00"
+        - gridcell "$10.00"
+        - gridcell "1 month ago"
+        - gridcell "admin@carifer.com"
+        - gridcell " | ":
+          - link ""
+          - text: "|"
+          - link ""
+      - row "NU-INV-559714 12-03-2025 Create Three Test T Unpaid $10.00 $0.00 $10.00 1 month ago admin@carifer.com  | ":
+        - gridcell "NU-INV-559714":
+          - link "NU-INV-559714"
+        - gridcell "12-03-2025"
+        - gridcell "Create Three Test T":
+          - link "Create Three Test T"
+        - gridcell "Unpaid"
+        - gridcell "$10.00"
+        - gridcell "$0.00"
+        - gridcell "$10.00"
+        - gridcell "1 month ago"
+        - gridcell "admin@carifer.com"
+        - gridcell " | ":
+          - link ""
+          - text: "|"
+          - link ""
+      - row "NU-INV-559713 12-03-2025 Create Two Test T Unpaid $10.00 $0.00 $10.00 1 month ago admin@carifer.com  | ":
+        - gridcell "NU-INV-559713":
+          - link "NU-INV-559713"
+        - gridcell "12-03-2025"
+        - gridcell "Create Two Test T":
+          - link "Create Two Test T"
+        - gridcell "Unpaid"
+        - gridcell "$10.00"
+        - gridcell "$0.00"
+        - gridcell "$10.00"
+        - gridcell "1 month ago"
+        - gridcell "admin@carifer.com"
+        - gridcell " | ":
+          - link ""
+          - text: "|"
+          - link ""
+      - row "NU-INV-559711 28-03-2025 Create Five Test T Unpaid $91.00 $0.00 $91.00 1 month ago admin@carifer.com  | ":
+        - gridcell "NU-INV-559711":
+          - link "NU-INV-559711"
+        - gridcell "28-03-2025"
+        - gridcell "Create Five Test T":
+          - link "Create Five Test T"
+        - gridcell "Unpaid"
+        - gridcell "$91.00"
+        - gridcell "$0.00"
+        - gridcell "$91.00"
+        - gridcell "1 month ago"
+        - gridcell "admin@carifer.com"
+        - gridcell " | ":
+          - link ""
+          - text: "|"
+          - link ""
+  - status: Showing 1 to 10 of 20,599 entries
+  - list:
+    - listitem:
+      - link "Previous"
+    - listitem:
+      - link "1"
+    - listitem:
+      - link "2"
+    - listitem:
+      - link "3"
+    - listitem:
+      - link "4"
+    - listitem:
+      - link "5"
+    - listitem:
+      - link "…"
+    - listitem:
+      - link "2060"
+    - listitem:
+      - link "Next"
+- tooltip "Return to top"
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 |
+   3 | test('test', async ({ page }) => {
+   4 |   await page.goto('https://v1prepaid.smhrp01.app/admin/signin');
+   5 |   await page.getByRole('textbox', { name: 'Email E-mail Confirm E-mail' }).click();
+   6 |   await page.getByRole('textbox', { name: 'Email E-mail Confirm E-mail' }).fill('admin@carifer.com');
+   7 |   await page.getByRole('textbox', { name: 'Password Password' }).click();
+   8 |   await page.getByRole('textbox', { name: 'Password Password' }).fill('Password@123');
+   9 |   await page.getByRole('button', { name: 'Log In' }).click();
+  10 |   await page.getByRole('link', { name: 'Sales Invoice', exact: true }).click();
+  11 |   await page.locator('#select2-paymentStatus-container').getByText('Please Select One').click();
+  12 |   await page.getByRole('treeitem', { name: 'Unpaid' }).click();
+  13 |   await page.getByRole('button', { name: 'Search' }).click();
+> 14 |   await page.getByRole('row', { name: 'NU-INV-559723 28-01-2024' }).getByRole('link').nth(2).click();
+     |                                                                                              ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  15 |   await page.getByRole('link', { name: 'Pay Now' }).click();
+  16 |   await page.locator('#select2-mode_of_payment-container').click();
+  17 |   await page.getByRole('treeitem', { name: 'AMALBank' }).click();
+  18 |   await page.getByRole('textbox', { name: 'Cheque / Reference No:' }).click();
+  19 |   await page.getByRole('textbox', { name: 'Cheque / Reference No:' }).fill('656352');
+  20 |   await page.getByRole('textbox', { name: 'Cheque / Reference Date:' }).click();
+  21 |   await page.getByRole('cell', { name: '1', exact: true }).first().click();
+  22 |   await page.getByRole('textbox', { name: 'Payee Mobile Number:' }).click();
+  23 |   await page.getByRole('textbox', { name: 'Payee Mobile Number:' }).fill('73635342');
+  24 |   await page.locator('textarea[name="remarks"]').click();
+  25 |   await page.locator('textarea[name="remarks"]').fill('Test');
+  26 |   await page.getByRole('button', { name: 'Pay Now' }).click();
+  27 |   await page.pause();
+  28 |
+  29 | });
+```

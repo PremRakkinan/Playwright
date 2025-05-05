@@ -1,0 +1,2 @@
+Status Code: 200
+Response Body: {"status":"SUCCESS","message":"Operation completed successfully","result":{"dueDate":"28-02-2023 00:00:00","invoiceDate":"28-02-2023 00:00:00","invoiceNumber":"NU-INV-559475","invoiceAmount":2.6,"taxAmount":0.0,"outstandingBalance":2.6,"totalInvoiceAmount":2.6,"description":"February-2023 Reading (RefNo: A-1-M-1464-7363826333,ManualMeter) ","invoiceStatus":"Unpaid","billerCode":"BN7-399-18"}}
