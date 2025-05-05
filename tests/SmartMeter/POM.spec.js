@@ -10,6 +10,8 @@ test('test', async ({ page }) => {
   await page.waitForTimeout(5000);
   await page.locator('role=link[name="Customer"]').click();
 
+
+  
   // page.getByRole('link', { name: 'Customer', exact: true }).click();
   await page.getByRole('link', { name: '+ Create' }).click();
   await page.locator('#customer_group').selectOption('Individual');
