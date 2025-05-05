@@ -9,7 +9,7 @@ test.describe('Login Test Suite', () => {
     await loginPage.gotoLoginPage();
     await loginPage.login('admin@carifer.com', 'Password@123');
     //await page.waitForTimeout(5000);
-    //await page.pause();
+    await page.pause();
  
    // await expect(page).toHaveURL(/dashboard|home|projects/i);
   });

@@ -23,7 +23,7 @@ test('test', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Last Name*' }).click();
   await page.getByRole('textbox', { name: 'Last Name*' }).fill('Employee');
   await page.getByRole('textbox', { name: 'Mobile Number*' }).click();
-  await page.getByRole('textbox', { name: 'Mobile Number*' }).fill('8776656233');
+  await page.getByRole('textbox', { name: 'Mobile Number*' }).fill('6567767675');
   await page.getByRole('textbox', { name: 'Alternative Mobile Number' }).click();
   await page.getByRole('textbox', { name: 'Alternative Mobile Number' }).fill('8767676766');
   await page.getByRole('textbox', { name: 'Emergency Mobile Number' }).click();

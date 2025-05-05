@@ -20,8 +20,6 @@ testData.forEach((data) => {
     await page.getByRole('button', { name: 'Log In' }).click();
     await page.pause();
 
-
-
   });
 });
  

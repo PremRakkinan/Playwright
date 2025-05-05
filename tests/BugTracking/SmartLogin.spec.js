@@ -25,7 +25,7 @@ test('test', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Longitude:' }).dblclick();
   await page.getByRole('textbox', { name: 'Longitude:' }).fill('34.546665');
   await page.getByRole('textbox', { name: 'Meter Number:' }).dblclick();
-  await page.getByRole('textbox', { name: 'Meter Number:' }).fill('75684745');
+  await page.getByRole('textbox', { name: 'Meter Number:' }).fill('75684742');
   await page.getByRole('button', { name: 'Save' }).dblclick();
   //await page.getByRole('button', { name: 'Save' }).click();
   await page.locator('#select2-getCustomer-container').click();

@@ -1,0 +1,404 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: test
+- Location: C:\PlayWright Automation\tests\SmartMeter\AddReading.spec.js:7:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByRole('row', { name: 'C 1 C-1-S-1256-75684744' }).getByRole('link').nth(2)
+
+    at C:\PlayWright Automation\tests\SmartMeter\AddReading.spec.js:15:93
+```
+
+# Page snapshot
+
+```yaml
+- banner:
+  - link "logo":
+    - img "logo"
+  - navigation:
+    - button
+    - list:
+      - listitem:
+        - link "KPI Dashboards":
+          - img
+          - text: KPI Dashboards
+    - list:
+      - listitem:
+        - link
+      - listitem:
+        - link "img Admin Carifer":
+          - img "img"
+          - paragraph: Admin Carifer
+- complementary:
+  - list:
+    - listitem:
+      - link "Dashboard":
+        - img
+        - text: Dashboard
+    - listitem:
+      - link "Customer":
+        - img
+        - text: Customer
+    - listitem:
+      - link "Meter":
+        - img
+        - text: Meter
+    - listitem:
+      - link "Prepaid Meters**":
+        - img
+        - text: Prepaid Meters**
+    - listitem:
+      - link "Transferred Meters":
+        - img
+        - text: Transferred Meters
+    - listitem:
+      - link "Meter Map":
+        - img
+        - text: Meter Map
+    - listitem:
+      - link "Meter Monitor":
+        - img
+        - text: Meter Monitor
+    - listitem:
+      - link "Meter Operations":
+        - img
+        - text: Meter Operations
+    - listitem:
+      - link "Workflow ":
+        - img
+        - text: Workflow 
+    - listitem:
+      - link "Meter Events":
+        - img
+        - text: Meter Events
+    - listitem:
+      - link "Meter Conversion":
+        - img
+        - text: Meter Conversion
+    - listitem:
+      - link "Survey App ":
+        - img
+        - text: Survey App 
+    - listitem:
+      - link "Sales Invoice":
+        - img
+        - text: Sales Invoice
+    - listitem:
+      - link "Map Invoice":
+        - img
+        - text: Map Invoice
+    - listitem:
+      - link "Payments":
+        - img
+        - text: Payments
+    - listitem:
+      - link "Make Payment":
+        - img
+        - text: Make Payment
+    - listitem:
+      - link "SMS ":
+        - img
+        - text: SMS 
+    - listitem:
+      - link "Petty Cash ":
+        - img
+        - text: Petty Cash 
+    - listitem:
+      - link "Meter Area Bulk Transfer":
+        - img
+        - text: Meter Area Bulk Transfer
+    - listitem:
+      - link "Meter Area Change":
+        - img
+        - text: Meter Area Change
+    - listitem:
+      - link "Change Meter Area in Bulk":
+        - img
+        - text: Change Meter Area in Bulk
+    - listitem:
+      - link "Smartmeter Sales Invoice Batch":
+        - img
+        - text: Smartmeter Sales Invoice Batch
+    - listitem:
+      - link "Reports ":
+        - img
+        - text: Reports 
+    - listitem:
+      - link "Customer Care ":
+        - img
+        - text: Customer Care 
+    - listitem:
+      - link "Security ":
+        - img
+        - text: Security 
+    - listitem:
+      - link "Settings ":
+        - img
+        - text: Settings 
+    - listitem:
+      - link "Accounts ":
+        - img
+        - text: Accounts 
+    - listitem:
+      - link "Shareholder ":
+        - img
+        - text: Shareholder 
+    - listitem:
+      - link "HR ":
+        - img
+        - text: HR 
+    - listitem:
+      - link "Supplier ":
+        - img
+        - text: Supplier 
+    - listitem:
+      - link "Purchase ":
+        - img
+        - text: Purchase 
+    - listitem:
+      - link "Inventory ":
+        - img
+        - text: Inventory 
+    - listitem:
+      - link "Add Income":
+        - img
+        - text: Add Income
+    - listitem:
+      - link "Add Expense":
+        - img
+        - text: Add Expense
+    - listitem:
+      - link "Income And Expense Report":
+        - img
+        - text: Income And Expense Report
+    - listitem:
+      - link "Manager Dashboard":
+        - img
+        - text: Manager Dashboard
+    - listitem:
+      - link "Manager":
+        - img
+        - text: Manager
+    - listitem:
+      - link "Live Meter ":
+        - img
+        - text: Live Meter 
+- complementary:
+  - heading "Meter" [level=1]
+  - list:
+    - listitem:
+      - link "Dashboard":
+        - img
+        - text: Dashboard
+    - listitem:
+      - text: »
+      - link "Meter List"
+  - heading "Meter List" [level=4]:
+    - img
+    - text: Meter List
+  - link "+ Create"
+  - text: "Zone:"
+  - combobox "Please Select One"
+  - text: "Area:"
+  - combobox "Please Select One"
+  - text: "Customer Name:"
+  - textbox "Enter Customer Name"
+  - text: "Supply ID:"
+  - textbox "Enter Supply Id"
+  - text: "Serial Number:"
+  - textbox "Serial Number:"
+  - text: "Meter Status:"
+  - combobox "Please Select One"
+  - button "Search"
+  - button "Reset"
+  - grid:
+    - rowgroup:
+      - 'row "Zone: activate to sort column ascending Area: activate to sort column ascending Meter Name: activate to sort column ascending Customer Name: activate to sort column ascending Status: activate to sort column ascending Modified: activate to sort column ascending Action"':
+        - 'gridcell "Zone: activate to sort column ascending"': Zone 
+        - 'gridcell "Area: activate to sort column ascending"': Area 
+        - 'gridcell "Meter Name: activate to sort column ascending"': Meter Name 
+        - 'gridcell "Customer Name: activate to sort column ascending"': Customer Name 
+        - 'gridcell "Status: activate to sort column ascending"': Status 
+        - 'gridcell "Modified: activate to sort column ascending"': Modified 
+        - gridcell "Action"
+    - rowgroup:
+      - row "A 1 A-2-S-1441-70096281 Cismaan Maxamuud Siciid Maxamed Connected 2 hours ago  ":
+        - gridcell "A"
+        - gridcell "1"
+        - gridcell "A-2-S-1441-70096281":
+          - link "A-2-S-1441-70096281"
+        - gridcell "Cismaan Maxamuud Siciid Maxamed":
+          - link "Cismaan Maxamuud Siciid Maxamed"
+        - gridcell "Connected"
+        - gridcell "2 hours ago"
+        - gridcell " ":
+          - link ""
+          - link ""
+      - row "A 1 A-1-S-1533-155166 Jack Testingttttt Tt T Connected 23 hours ago  ":
+        - gridcell "A"
+        - gridcell "1"
+        - gridcell "A-1-S-1533-155166":
+          - link "A-1-S-1533-155166"
+        - gridcell "Jack Testingttttt Tt T":
+          - link "Jack Testingttttt Tt T"
+        - gridcell "Connected"
+        - gridcell "23 hours ago"
+        - gridcell " ":
+          - link ""
+          - link ""
+      - row "A 1 A-1-S-1532-12121212 Jack Tttest Ttt Tt Connected 5 days ago  ":
+        - gridcell "A"
+        - gridcell "1"
+        - gridcell "A-1-S-1532-12121212":
+          - link "A-1-S-1532-12121212"
+        - gridcell "Jack Tttest Ttt Tt":
+          - link "Jack Tttest Ttt Tt"
+        - gridcell "Connected"
+        - gridcell "5 days ago"
+        - gridcell " ":
+          - link ""
+          - link ""
+      - row "B 1 B-1-S-1544-141414 Jack Five T T Connected 5 days ago  ":
+        - gridcell "B"
+        - gridcell "1"
+        - gridcell "B-1-S-1544-141414":
+          - link "B-1-S-1544-141414"
+        - gridcell "Jack Five T T":
+          - link "Jack Five T T"
+        - gridcell "Connected"
+        - gridcell "5 days ago"
+        - gridcell " ":
+          - link ""
+          - link ""
+      - row "A 1 A-1-S-1531-78743874 Kevin Peterson K P Connected 2 weeks ago  ":
+        - gridcell "A"
+        - gridcell "1"
+        - gridcell "A-1-S-1531-78743874":
+          - link "A-1-S-1531-78743874"
+        - gridcell "Kevin Peterson K P":
+          - link "Kevin Peterson K P"
+        - gridcell "Connected"
+        - gridcell "2 weeks ago"
+        - gridcell " ":
+          - link ""
+          - link ""
+      - row "B 1 B-1-S-1543-78434673 Kevin Peterson K P Connected 2 weeks ago  ":
+        - gridcell "B"
+        - gridcell "1"
+        - gridcell "B-1-S-1543-78434673":
+          - link "B-1-S-1543-78434673"
+        - gridcell "Kevin Peterson K P":
+          - link "Kevin Peterson K P"
+        - gridcell "Connected"
+        - gridcell "2 weeks ago"
+        - gridcell " ":
+          - link ""
+          - link ""
+      - row "H 1 H-1-S-1626-21049442 Cumar Aadan Cismaan Faahiye Transferred 2 weeks ago  ":
+        - gridcell "H"
+        - gridcell "1"
+        - gridcell "H-1-S-1626-21049442":
+          - link "H-1-S-1626-21049442"
+        - gridcell "Cumar Aadan Cismaan Faahiye":
+          - link "Cumar Aadan Cismaan Faahiye"
+        - gridcell "Transferred"
+        - gridcell "2 weeks ago"
+        - gridcell " ":
+          - link ""
+          - link ""
+      - row "I 3 I-3-S-2-DE-001 Amina Hassan Farah - 001 Connected 2 weeks ago  ":
+        - gridcell "I"
+        - gridcell "3"
+        - gridcell "I-3-S-2-DE-001":
+          - link "I-3-S-2-DE-001"
+        - gridcell "Amina Hassan Farah - 001":
+          - link "Amina Hassan Farah - 001"
+        - gridcell "Connected"
+        - gridcell "2 weeks ago"
+        - gridcell " ":
+          - link ""
+          - link ""
+      - row "A 1 A-1-S-1530-21048033 Prithvi Raj P R Disconnected 3 weeks ago  ":
+        - gridcell "A"
+        - gridcell "1"
+        - gridcell "A-1-S-1530-21048033":
+          - link "A-1-S-1530-21048033"
+        - gridcell "Prithvi Raj P R":
+          - link "Prithvi Raj P R"
+        - gridcell "Disconnected"
+        - gridcell "3 weeks ago"
+        - gridcell " ":
+          - link ""
+          - link ""
+      - row "A 1 A-1-S-1527-70058999 CID SHANKAR C S Connected 3 weeks ago  ":
+        - gridcell "A"
+        - gridcell "1"
+        - gridcell "A-1-S-1527-70058999":
+          - link "A-1-S-1527-70058999"
+        - gridcell "CID SHANKAR C S":
+          - link "CID SHANKAR C S"
+        - gridcell "Connected"
+        - gridcell "3 weeks ago"
+        - gridcell " ":
+          - link ""
+          - link ""
+  - status: Showing 1 to 10 of 17,295 entries
+  - list:
+    - listitem:
+      - link "Previous"
+    - listitem:
+      - link "1"
+    - listitem:
+      - link "2"
+    - listitem:
+      - link "3"
+    - listitem:
+      - link "4"
+    - listitem:
+      - link "5"
+    - listitem:
+      - link "…"
+    - listitem:
+      - link "1730"
+    - listitem:
+      - link "Next"
+- tooltip "Return to top"
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 |
+   3 | // test.use({
+   4 | //   slowMo: 100 // Delay of 100ms between actions
+   5 | // });
+   6 |
+   7 | test('test', async ({ page }) => {
+   8 |   await page.goto('https://v1prepaid.smhrp01.app/admin/signin');
+   9 |   await page.getByRole('textbox', { name: 'Email E-mail Confirm E-mail' }).click();
+  10 |   await page.getByRole('textbox', { name: 'Email E-mail Confirm E-mail' }).fill('admin@carifer.com');
+  11 |   await page.getByRole('textbox', { name: 'Password Password' }).click();
+  12 |   await page.getByRole('textbox', { name: 'Password Password' }).fill('Password@123');
+  13 |   await page.getByRole('button', { name: 'Log In' }).click();
+  14 |   await page.getByRole('link', { name: 'Meter', exact: true }).click();
+> 15 |   await page.getByRole('row', { name: 'C 1 C-1-S-1256-75684744' }).getByRole('link').nth(2).click();
+     |                                                                                             ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  16 |   await page.getByRole('link', { name: '+ Add Meter Reading' }).click();
+  17 |   await page.locator('#meterread-update-form #reading').click();
+  18 |   await page.locator('#meterread-update-form #reading').fill('16');
+  19 |   await page.getByRole('button', { name: 'Add' }).click();
+  20 |   await page.pause();
+  21 |
+  22 | });
+```
